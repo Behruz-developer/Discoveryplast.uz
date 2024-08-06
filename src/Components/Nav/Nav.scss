@@ -1,0 +1,125 @@
+.nav {
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.692);
+    padding: 15px 0;
+    position: fixed;
+
+    &_box {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        @media (max-width:1000px) {
+            justify-content: space-between;
+        }
+    }
+
+    &_logo {
+        img {
+            height: 60px;
+        }
+    }
+
+    &_list {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+        transition: .5s;
+
+        @media (max-width:1000px) {
+            flex-direction: column;
+            position: absolute;
+            top: -15px;
+            left: -6%;
+            background: rgba(255, 255, 255, 0.692);
+            max-width: 350px;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            padding-top: 100px;
+            gap: 20px;
+            z-index: 999;
+            transform: translateX(-110%);
+
+            &.active {
+                transform: translateX(0);
+
+            }
+        }
+
+    }
+
+    &_link {
+        text-decoration: none;
+        padding: 35px 10px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 19.2px;
+        letter-spacing: 0.4000000059604645px;
+        text-align: left;
+        color: #000;
+        cursor: pointer;
+
+        @media (max-width:1000px) {
+            padding: 0;
+        }
+    }
+
+    &_link:hover {
+        color: red;
+        border-bottom: 2px solid red;
+        z-index: 99999999;
+    }
+
+    &_lang {
+        display: flex;
+        gap: 25px;
+        position: absolute;
+        right: 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 19.2px;
+        letter-spacing: 1px;
+
+        .lang {
+            cursor: pointer;
+        }
+
+        .lang:hover {
+            color: red;
+        }
+
+        @media (max-width:1000px) {
+            position: static;
+        }
+    }
+
+    &_bottom {
+        top: 95px;
+        position: absolute;
+    }
+
+    &_menu,
+    &_close {
+        display: none;
+        border: none;
+        background: unset;
+        font-size: 30px;
+        color: #000;
+
+        @media (max-width:1000px) {
+            display: block;
+
+        }
+    }
+
+    &_close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}

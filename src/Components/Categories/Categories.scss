@@ -1,0 +1,47 @@
+.categories {
+    padding: 50px 0;
+
+    &_title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 56px;
+        text-align: center;
+    }
+    &_box{
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        @include media(1000px){
+            margin-top: 50px;
+        }
+    }
+    &_card {
+        max-width: 262px;
+        width: 100%;
+        position: relative;
+    }
+
+    &_img {
+        width: 100%;
+        display: block;
+
+    }
+
+    &_text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 22px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        padding: 10px 0;
+        width: 100%;
+        background-color: #A0A0A0B2;       
+        color: white; 
+    }
+}

@@ -1,0 +1,53 @@
+.news2 {
+    padding: 50px 0;
+    background-color: unset;
+
+    &_title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 37.5px;
+        text-align: center;
+        color: black;
+    }
+
+    &_box {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        @media (max-width:1000px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &_card {
+        max-width: 370px;
+        width: 100%;
+        text-decoration: none;
+    }
+
+    &_img {
+        width: 100%;
+    }
+
+    &_subtitle {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22.5px;
+        text-align: left;
+        color: black;
+        margin-top: 25px;
+    }
+
+    &_text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        color: #9B2743;
+    }
+}
