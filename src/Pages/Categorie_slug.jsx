@@ -24,6 +24,7 @@ const Categorie_slug = () => {
     queryKey: ["categories", i18n.language],
     queryFn: getData,
   });
+  
   useEffect(() => {
     const handleLanguageChange = () => {
       navigate("/");
