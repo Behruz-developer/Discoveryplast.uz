@@ -2,14 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import Upcoming from "../Components/Upcoming/Upcoming";
-// import img1 from "../assets/images/carousel.jpeg";
-// import img2 from "../assets/images/carousel2.jpeg";
 import { useNavigate, useParams } from "react-router";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const News_slug = () => {
-  // const images = [img1, img2];
   const { slug } = useParams();
   const navigate = useNavigate();
   const {  i18n } = useTranslation();

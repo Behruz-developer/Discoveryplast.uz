@@ -12,7 +12,10 @@ const Customer = () => {
             <h2 className="customer_title">{t('customer_title')}</h2>
             <div className="customer_border"></div>
             <p className="customer_text">{t('customer_text_1')}</p>
-            <p className="customer_text">{t('customer_text_2')}</p>
+            <p className="customer_text">      {t('customer_text_2').split('\n').map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}</p>
+            <p className="customer_text">{t('customer_text_3')}</p>
           </div>
         </div>
       </div>
