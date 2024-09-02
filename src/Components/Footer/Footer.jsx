@@ -31,7 +31,7 @@ const Footer = () => {
       </div>
       <div className="footer_end">
         <p>© 2024 Powered by</p>
-        <a href="#!"><img src={logo2} alt="" /></a>
+        <a href="https://cmdtech.uz/ru"><img src={logo2} alt=""/></a>
       </div>
     </footer>
   );

@@ -96,6 +96,10 @@
         @media (max-width:1000px) {
             position: static;
         }
+
+        .active{
+            color: red;
+        }
     }
 
     &_bottom {

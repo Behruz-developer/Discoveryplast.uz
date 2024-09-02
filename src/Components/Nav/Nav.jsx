@@ -18,7 +18,7 @@ const Nav = () => {
     };
 
     useEffect(() => {
-        changeLanguage('ru'); 
+        changeLanguage('ru');
     }, []);
 
     const links = useMemo(() => [
@@ -28,6 +28,12 @@ const Nav = () => {
         { url: "/news_page ", name: t("news") },
         { url: "footer", name: t("contacts") },
     ], [t]);
+
+    const [activeLang, setActiveLang] = useState('ru'); // Dastlab "en" aktiv bo'ladi
+
+    const changeLanguage2 = (lang) => {
+        setActiveLang(lang);
+    };
 
     return (
         <div>
@@ -65,9 +71,25 @@ const Nav = () => {
                                 </li>
                             ))}
                             <div className="nav_lang">
-                                <p className="lang" onClick={() => changeLanguage('en')}>EN</p>
-                                <p className="lang" onClick={() => changeLanguage('uz')}>UZ</p>
-                                <p className="lang" onClick={() => changeLanguage('ru')}>RU</p>
+                                <p
+                                    className={`lang ${activeLang === 'ru' ? 'active' : ''}`}
+                                    onClick={() => changeLanguage2('ru')}
+                                >
+                                    RU
+                                </p>
+                                <p
+                                    className={`lang ${activeLang === 'en' ? 'active' : ''}`}
+                                    onClick={() => changeLanguage2('en')}
+                                >
+                                    EN
+                                </p>
+                                <p
+                                    className={`lang ${activeLang === 'uz' ? 'active' : ''}`}
+                                    onClick={() => changeLanguage2('uz')}
+                                >
+                                    UZ
+                                </p>
+
                             </div>
                         </ul>
                     </div>
