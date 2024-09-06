@@ -30,22 +30,19 @@ const News = ({ title }) => {
         <div className="news_box">
           {data &&
             data.map((obj) => (
-              <Link
-                className="news_card"
-                key={obj.id}
-                to={`/news_page/${obj.slug}`}
-              >
-                {JSON.parse(obj.images).map((image, index) => (
-                  <img
-                    className="news_img"
-                    key={index}
-                    src={`https://aquadoctor.uz/${image}`}
-                    alt=""
-                  />
-                ))}
-                <p className="news_subtitle">{obj.name}</p>
-                <p className="news_text">{obj.slug}</p>
-              </Link>
+<Link
+  className="news_card"
+  key={obj.id}
+  to={`/news_page/${obj.slug}`}
+>
+  <img
+    className="news_img"
+    src={`https://aquadoctor.uz/${JSON.parse(obj.images)[0]}`}  
+    alt=""
+  />
+  <p className="news_subtitle">{obj.name}</p>
+  <p className="news_text">{obj.slug}</p>
+</Link>
             ))}
           
         </div>

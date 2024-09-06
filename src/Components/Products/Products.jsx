@@ -28,16 +28,17 @@ const Products = () => {
           {data &&
             data.map((obj) => (
               <Link
-                className="categories_card"
+                href="#!"
+                className="products_card"
                 key={obj.id}
-                to={`/category_page/${obj.slug}`}
+                to={`/products_page/${obj.slug}`}
               >
                 <img
-                  className="categories_img"
+                  className="products_img"
                   src={`https://aquadoctor.uz/${JSON.parse(obj.images)[0]}`}
                   alt=""
                 />
-                <p className="categories_text">{obj.name}</p>
+                <p className="products_text">{obj.name}</p>
               </Link>
             ))}
         </div>
