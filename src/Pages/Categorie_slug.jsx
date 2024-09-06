@@ -12,7 +12,7 @@ const Categorie_slug = () => {
   const { slug } = useParams();
 
   const navigate = useNavigate();
-  const url = `https://discoveryplast.uz/api/${i18n.language}/v1/categories`;
+  const url = `https://aquadoctor.uz/api/${i18n.language}/v1/categories`;
   async function getData() {
     const res = await axios.get(url);
     if (res.data && res.data.categories) {
@@ -39,7 +39,7 @@ const Categorie_slug = () => {
   const getProduct = data?.find((obj) => obj.slug === slug);
   const images2 = getProduct?.images
     ? JSON.parse(getProduct.images).map(
-        (image) => `https://discoveryplast.uz/${image}`
+        (image) => `https://aquadoctor.uz/${image}`
       )
     : [];
   return (

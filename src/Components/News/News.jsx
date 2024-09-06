@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const News = ({ title }) => {
   const { i18n } = useTranslation();
-  const url = `https://discoveryplast.uz/api/${i18n.language}/v1/categories`;
+  const url = `https://aquadoctor.uz/api/${i18n.language}/v1/categories`;
   async function getData() {
     const res = await axios.get(url);
     if (res.data && res.data.categories) {
@@ -39,7 +39,7 @@ const News = ({ title }) => {
                   <img
                     className="news_img"
                     key={index}
-                    src={`https://discoveryplast.uz/${image}`}
+                    src={`https://aquadoctor.uz/${image}`}
                     alt=""
                   />
                 ))}

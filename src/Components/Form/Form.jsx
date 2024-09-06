@@ -18,7 +18,7 @@ const Form = () => {
     };
 
     try {
-      const response = await fetch('https://discoveryplast.uz/api/uz/v1/leads', {
+      const response = await fetch('https://aquadoctor.uz/api/uz/v1/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

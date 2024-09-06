@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import  './Products.scss';
+import './Products.scss';
 
 const Products = () => {
   const { i18n } = useTranslation();
-  const url = `https://discoveryplast.uz/api/${i18n.language}/v1/products`;
+  const url = `https://aquadoctor.uz/api/${i18n.language}/v1/products`;
 
   async function getData() {
     const res = await fetch(url);
@@ -28,20 +28,16 @@ const Products = () => {
           {data &&
             data.map((obj) => (
               <Link
-                href="#!"
-                className="products_card"
+                className="categories_card"
                 key={obj.id}
-                to={`/products_page/${obj.slug}`}
+                to={`/category_page/${obj.slug}`}
               >
-                {JSON.parse(obj.images).map((image, index) => (
-                  <img
-                    className="products_img"
-                    key={index}
-                    src={`https://discoveryplast.uz/${image}`}
-                    alt=""
-                  />
-                ))}
-                <p className="products_text">{obj.name}</p>
+                <img
+                  className="categories_img"
+                  src={`https://aquadoctor.uz/${JSON.parse(obj.images)[0]}`}
+                  alt=""
+                />
+                <p className="categories_text">{obj.name}</p>
               </Link>
             ))}
         </div>

@@ -12,7 +12,7 @@ const Categories = ({ title }) => {
   };
   const { i18n } = useTranslation();
 
-  const url = `https://discoveryplast.uz/api/${i18n.language}/v1/categories`;
+  const url = `https://aquadoctor.uz/api/${i18n.language}/v1/categories`;
   async function getData() {
     const res = await axios.get(url); 
     return res.data.categories;
@@ -32,20 +32,17 @@ const Categories = ({ title }) => {
           {data &&
             data.map((obj) => (
               <Link
-                className="categories_card"
-                key={obj.id}
-                to={`/category_page/${obj.slug}`}
-              >
-                {JSON.parse(obj.images).map((image, index) => (
-                  <img
-                    className="categories_img"
-                    key={index}
-                    src={`https://discoveryplast.uz/${image}`}
-                    alt=""
-                  />
-                ))}
-                <p className="categories_text">{obj.name}</p>
-              </Link>
+              className="categories_card"
+              key={obj.id}
+              to={`/category_page/${obj.slug}`}
+            >
+              <img
+                className="categories_img"
+                src={`https://aquadoctor.uz/${JSON.parse(obj.images)[0]}`}  
+                alt=""
+              />
+              <p className="categories_text">{obj.name}</p>
+            </Link>
             ))}
         </div>
       </div>

@@ -7,28 +7,28 @@ const Upcoming = ({ images, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   const prevSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
   useEffect(() => {
-      const autoSlider = setInterval(nextSlide, 3500); 
-      return () => clearInterval(autoSlider);
+    const autoSlider = setInterval(nextSlide, 3500);
+    return () => clearInterval(autoSlider);
   }, []);
 
 
   return (
-    
+
     <div className="main-carousel" id="home">
       <div className="carousel">
         <div className="items">
-          {images && images.map((src, index ) => (
+          {images && images.map((src, index) => (
             <div
               className={`img_card carousel-image ${index === currentIndex ? 'current' : ''}`}
-              key={index }
+              key={index}
             >
               <img src={src} alt="" className="" />
               <div className="img_text">
@@ -49,3 +49,5 @@ const Upcoming = ({ images, title }) => {
 
 
 export default Upcoming;
+
+

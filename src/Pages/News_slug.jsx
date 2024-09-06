@@ -10,7 +10,7 @@ const News_slug = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const {  i18n } = useTranslation();
-  const url = `https://discoveryplast.uz/api/${i18n.language}/v1/categories`;
+  const url = `https://aquadoctor.uz/api/${i18n.language}/v1/categories`;
   async function getData() {
     const res = await axios.get(url);
     if (res.data && res.data.categories) {
@@ -36,7 +36,7 @@ const News_slug = () => {
   const getProduct = data?.find((obj) => obj.slug === slug);
   const images2 = getProduct?.images
     ? JSON.parse(getProduct.images).map(
-        (image) => `https://discoveryplast.uz/${image}`
+        (image) => `https://aquadoctor.uz/${image}`
       )
     : [];
   if (getProduct) {
@@ -65,7 +65,7 @@ const News_slug = () => {
                         <img
                           className="newslug_card_right_img"
                           key={index}
-                          src={`https://discoveryplast.uz/${image}`}
+                          src={`https://aquadoctor.uz/${image}`}
                           alt=""
                         />
                       ))}

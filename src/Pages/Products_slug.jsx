@@ -53,7 +53,7 @@ const Products_slug = () => {
   const { slug } = useParams();
   const {  i18n } = useTranslation();
   const navigate = useNavigate();
-  const url = `https://discoveryplast.uz/api/${i18n.language}/v1/products`;
+  const url = `https://aquadoctor.uz/api/${i18n.language}/v1/products`;
 
   async function getData() {
     const res = await fetch(url);
@@ -88,7 +88,7 @@ const Products_slug = () => {
 
   const getProduct = data?.find((obj) => obj.slug === slug);
   const images = JSON.parse(getProduct.images).map(
-    (image) => `https://discoveryplast.uz/${image}`
+    (image) => `https://aquadoctor.uz/${image}`
   );
 
   const setActiveImage = (imageSrc) => {
